@@ -25,7 +25,7 @@
         android:id="@+id/username_view"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="@string/alert_dialog_username"
+        android:text="@string/username_label"
         android:gravity="left"
         android:textAppearance="?android:attr/textAppearanceMedium" />
             
@@ -43,7 +43,7 @@
         android:id="@+id/password_view"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="@string/alert_dialog_password"
+        android:text="@string/password_label"
         android:gravity="left"
         android:textAppearance="?android:attr/textAppearanceMedium" />
             

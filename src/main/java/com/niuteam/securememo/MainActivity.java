@@ -6,7 +6,9 @@ import com.niuteam.database.SmsHander;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -88,17 +90,17 @@ public class MainActivity extends Activity {
 	public void keepassX(View view) {
 		     //       LayoutInflater factory = LayoutInflater.from(this);
             // final View v = factory.inflate(R.layout.alert_dialog_text_entry, null);
-            final View v = new EditText(this);
+            final EditText v = new EditText(this);
             Dialog dlg = new AlertDialog.Builder(MainActivity.this)
                 .setTitle("Login")
                 .setView(v)
-                .setPositiveButton(R.string.alert_dialog_ok, new DialogInterface.OnClickListener() {
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
-		Log.i("pwd " + v.getText() );
+		Log.i(CONST.TAG,"pwd " + v.getText() );
                         /* User clicked OK so do some stuff */
                     }
                 })
-                .setNegativeButton(R.string.alert_dialog_cancel, new DialogInterface.OnClickListener() {
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
 
                         /* User clicked cancel so do some stuff */

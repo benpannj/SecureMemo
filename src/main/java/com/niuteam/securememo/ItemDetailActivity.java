@@ -3,7 +3,7 @@ package com.niuteam.securememo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
-import android.support.v4.app.NavUtils;
+// import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 
 
@@ -60,7 +60,7 @@ public class ItemDetailActivity extends Activity {
             //
             // http://developer.android.com/design/patterns/navigation.html#up-vs-back
             //
-            NavUtils.navigateUpTo(this, new Intent(this, ItemListActivity.class));
+            // NavUtils.navigateUpTo(this, new Intent(this, ItemListActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);
