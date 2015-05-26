@@ -1,0 +1,197 @@
+-- Merging decision tree log ---
+manifest
+ADDED from AndroidManifest.xml:2:1
+	xmlns:android
+		ADDED from AndroidManifest.xml:2:11
+	package
+		ADDED from AndroidManifest.xml:3:5
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:versionName
+		ADDED from AndroidManifest.xml:5:5
+	android:versionCode
+		ADDED from AndroidManifest.xml:4:5
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+uses-sdk
+ADDED from AndroidManifest.xml:7:5
+MERGED from com.android.support:support-v4:22.1.1:20:5
+	android:targetSdkVersion
+		ADDED from AndroidManifest.xml:9:9
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:minSdkVersion
+		ADDED from AndroidManifest.xml:8:9
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+uses-permission#android.permission.READ_SMS
+ADDED from AndroidManifest.xml:11:5
+	android:name
+		ADDED from AndroidManifest.xml:11:22
+uses-permission#android.permission.WRITE_SMS
+ADDED from AndroidManifest.xml:12:5
+	android:name
+		ADDED from AndroidManifest.xml:12:22
+uses-permission#android.permission.READ_CONTACTS
+ADDED from AndroidManifest.xml:13:5
+	android:name
+		ADDED from AndroidManifest.xml:13:22
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from AndroidManifest.xml:14:5
+	android:name
+		ADDED from AndroidManifest.xml:14:22
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from AndroidManifest.xml:15:5
+	android:name
+		ADDED from AndroidManifest.xml:15:22
+uses-permission#android.permission.INTERNET
+ADDED from AndroidManifest.xml:16:5
+	android:name
+		ADDED from AndroidManifest.xml:16:22
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from AndroidManifest.xml:17:5
+	android:name
+		ADDED from AndroidManifest.xml:17:22
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from AndroidManifest.xml:18:5
+	android:name
+		ADDED from AndroidManifest.xml:18:22
+uses-permission#android.permission.WAKE_LOCK
+ADDED from AndroidManifest.xml:19:5
+	android:name
+		ADDED from AndroidManifest.xml:19:22
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from AndroidManifest.xml:20:5
+	android:name
+		ADDED from AndroidManifest.xml:20:22
+uses-permission#android.permission.CHANGE_WIFI_MULTICAST_STATE
+ADDED from AndroidManifest.xml:21:5
+	android:name
+		ADDED from AndroidManifest.xml:21:22
+android:uses-permission#android.permission.READ_PHONE_STATE
+ADDED from AndroidManifest.xml:23:5
+	android:name
+		ADDED from AndroidManifest.xml:23:30
+application
+ADDED from AndroidManifest.xml:25:5
+MERGED from com.android.support:support-v4:22.1.1:22:5
+	android:label
+		ADDED from AndroidManifest.xml:29:9
+	android:allowBackup
+		ADDED from AndroidManifest.xml:27:9
+	android:icon
+		ADDED from AndroidManifest.xml:28:9
+	android:name
+		ADDED from AndroidManifest.xml:26:9
+activity#com.niuteam.securememo.MainActivity
+ADDED from AndroidManifest.xml:30:9
+	android:label
+		ADDED from AndroidManifest.xml:32:13
+	android:name
+		ADDED from AndroidManifest.xml:31:13
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:33:13
+action#android.intent.action.MAIN
+ADDED from AndroidManifest.xml:34:17
+	android:name
+		ADDED from AndroidManifest.xml:34:25
+category#android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:36:17
+	android:name
+		ADDED from AndroidManifest.xml:36:27
+activity#be.ppareit.swiftp.gui.FsPreferenceActivity
+ADDED from AndroidManifest.xml:39:9
+	android:name
+		ADDED from AndroidManifest.xml:39:19
+service#be.ppareit.swiftp.FsService
+ADDED from AndroidManifest.xml:42:9
+	android:name
+		ADDED from AndroidManifest.xml:42:18
+receiver#be.ppareit.swiftp.gui.FsNotification
+ADDED from AndroidManifest.xml:44:9
+	android:exported
+		ADDED from AndroidManifest.xml:46:13
+	android:name
+		ADDED from AndroidManifest.xml:45:13
+intent-filter#be.ppareit.swiftp.FTPSERVER_STARTED+be.ppareit.swiftp.FTPSERVER_STOPPED
+ADDED from AndroidManifest.xml:47:13
+action#be.ppareit.swiftp.FTPSERVER_STARTED
+ADDED from AndroidManifest.xml:48:17
+	android:name
+		ADDED from AndroidManifest.xml:48:25
+action#be.ppareit.swiftp.FTPSERVER_STOPPED
+ADDED from AndroidManifest.xml:49:17
+	android:name
+		ADDED from AndroidManifest.xml:49:25
+service#be.ppareit.swiftp.NsdService
+ADDED from AndroidManifest.xml:53:9
+	android:name
+		ADDED from AndroidManifest.xml:53:18
+receiver#be.ppareit.swiftp.NsdService$StartStopReceiver
+ADDED from AndroidManifest.xml:55:9
+	android:exported
+		ADDED from AndroidManifest.xml:57:13
+	android:name
+		ADDED from AndroidManifest.xml:56:13
+receiver#be.ppareit.swiftp.RequestStartStopReceiver
+ADDED from AndroidManifest.xml:65:9
+	android:exported
+		ADDED from AndroidManifest.xml:67:13
+	android:name
+		ADDED from AndroidManifest.xml:66:13
+intent-filter#be.ppareit.swiftp.ACTION_START_FTPSERVER+be.ppareit.swiftp.ACTION_STOP_FTPSERVER
+ADDED from AndroidManifest.xml:68:13
+action#be.ppareit.swiftp.ACTION_START_FTPSERVER
+ADDED from AndroidManifest.xml:69:17
+	android:name
+		ADDED from AndroidManifest.xml:69:25
+action#be.ppareit.swiftp.ACTION_STOP_FTPSERVER
+ADDED from AndroidManifest.xml:70:17
+	android:name
+		ADDED from AndroidManifest.xml:70:25
+receiver#be.ppareit.swiftp.gui.FsWidgetProvider
+ADDED from AndroidManifest.xml:73:9
+	android:label
+		ADDED from AndroidManifest.xml:77:13
+	android:icon
+		ADDED from AndroidManifest.xml:76:13
+	android:exported
+		ADDED from AndroidManifest.xml:75:13
+	android:name
+		ADDED from AndroidManifest.xml:74:13
+intent-filter#android.appwidget.action.APPWIDGET_UPDATE+be.ppareit.swiftp.FTPSERVER_STARTED+be.ppareit.swiftp.FTPSERVER_STOPPED
+ADDED from AndroidManifest.xml:78:13
+action#android.appwidget.action.APPWIDGET_UPDATE
+ADDED from AndroidManifest.xml:79:17
+	android:name
+		ADDED from AndroidManifest.xml:79:25
+meta-data#android.appwidget.provider
+ADDED from AndroidManifest.xml:84:13
+	android:resource
+		ADDED from AndroidManifest.xml:86:17
+	android:name
+		ADDED from AndroidManifest.xml:85:17
+service#be.ppareit.swiftp.gui.FsWidgetProvider$UpdateService
+ADDED from AndroidManifest.xml:89:9
+	android:name
+		ADDED from AndroidManifest.xml:89:18
+activity#com.niuteam.securememo.ItemListActivity
+ADDED from AndroidManifest.xml:91:9
+	android:label
+		ADDED from AndroidManifest.xml:93:13
+	android:name
+		ADDED from AndroidManifest.xml:92:13
+activity#com.niuteam.securememo.ItemDetailActivity
+ADDED from AndroidManifest.xml:95:9
+	android:label
+		ADDED from AndroidManifest.xml:97:13
+	android:parentActivityName
+		ADDED from AndroidManifest.xml:98:13
+	android:name
+		ADDED from AndroidManifest.xml:96:13
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from AndroidManifest.xml:99:13
+	android:name
+		ADDED from AndroidManifest.xml:100:17
+	android:value
+		ADDED from AndroidManifest.xml:101:17

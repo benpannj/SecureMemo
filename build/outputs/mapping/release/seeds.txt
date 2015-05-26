@@ -1,0 +1,103 @@
+be.ppareit.swiftp.FsService
+be.ppareit.swiftp.FsService: FsService()
+be.ppareit.swiftp.MediaUpdater: be.ppareit.swiftp.MediaUpdater[] values()
+be.ppareit.swiftp.MediaUpdater: be.ppareit.swiftp.MediaUpdater valueOf(java.lang.String)
+be.ppareit.swiftp.NsdService
+be.ppareit.swiftp.NsdService: NsdService()
+be.ppareit.swiftp.NsdService$StartStopReceiver
+be.ppareit.swiftp.NsdService$StartStopReceiver: NsdService$StartStopReceiver()
+be.ppareit.swiftp.RequestStartStopReceiver
+be.ppareit.swiftp.RequestStartStopReceiver: RequestStartStopReceiver()
+be.ppareit.swiftp.gui.FsNotification
+be.ppareit.swiftp.gui.FsNotification: FsNotification()
+be.ppareit.swiftp.gui.FsPreferenceActivity
+be.ppareit.swiftp.gui.FsPreferenceActivity: FsPreferenceActivity()
+be.ppareit.swiftp.gui.FsWidgetProvider
+be.ppareit.swiftp.gui.FsWidgetProvider: FsWidgetProvider()
+be.ppareit.swiftp.gui.FsWidgetProvider$UpdateService
+be.ppareit.swiftp.gui.FsWidgetProvider$UpdateService: FsWidgetProvider$UpdateService()
+com.niuteam.database.SmsHander: java.lang.String backupSms()
+com.niuteam.securememo.MainActivity
+com.niuteam.securememo.MainActivity: MainActivity()
+com.niuteam.securememo.MainActivity: void backupSms(android.view.View)
+com.niuteam.securememo.MainActivity: void startFtp(android.view.View)
+com.niuteam.securememo.R$dimen: int activity_horizontal_margin
+com.niuteam.securememo.R$dimen: int activity_vertical_margin
+com.niuteam.securememo.R$drawable: int ic_launcher
+com.niuteam.securememo.R$drawable: int notification
+com.niuteam.securememo.R$drawable: int widget_off
+com.niuteam.securememo.R$drawable: int widget_on
+com.niuteam.securememo.R$id: int btn_ftp
+com.niuteam.securememo.R$id: int btn_sms
+com.niuteam.securememo.R$id: int ivLogo
+com.niuteam.securememo.R$id: int ratingbar
+com.niuteam.securememo.R$id: int rl_name
+com.niuteam.securememo.R$id: int rl_score
+com.niuteam.securememo.R$id: int tvApplicationName
+com.niuteam.securememo.R$id: int tvRating
+com.niuteam.securememo.R$id: int txt_input
+com.niuteam.securememo.R$id: int txt_show
+com.niuteam.securememo.R$id: int widget_button
+com.niuteam.securememo.R$layout: int activity_main
+com.niuteam.securememo.R$layout: int line
+com.niuteam.securememo.R$layout: int widget_layout
+com.niuteam.securememo.R$string: int about_dlg_message
+com.niuteam.securememo.R$string: int about_dlg_title
+com.niuteam.securememo.R$string: int about_label
+com.niuteam.securememo.R$string: int acceptwifi_default
+com.niuteam.securememo.R$string: int acceptwifi_label
+com.niuteam.securememo.R$string: int action_settings
+com.niuteam.securememo.R$string: int advancedsettings_label
+com.niuteam.securememo.R$string: int allow_anonymous_default
+com.niuteam.securememo.R$string: int allow_anonymous_label
+com.niuteam.securememo.R$string: int anonymous_label
+com.niuteam.securememo.R$string: int anonymous_summary
+com.niuteam.securememo.R$string: int app_name
+com.niuteam.securememo.R$string: int cant_get_url
+com.niuteam.securememo.R$string: int chroot_default
+com.niuteam.securememo.R$string: int chroot_label
+com.niuteam.securememo.R$string: int extra_label
+com.niuteam.securememo.R$string: int hello_world
+com.niuteam.securememo.R$string: int help_dlg_message
+com.niuteam.securememo.R$string: int help_dlg_title
+com.niuteam.securememo.R$string: int help_label
+com.niuteam.securememo.R$string: int loginsettings_label
+com.niuteam.securememo.R$string: int market_version_label
+com.niuteam.securememo.R$string: int market_version_summary
+com.niuteam.securememo.R$string: int notif_server_starting
+com.niuteam.securememo.R$string: int notif_stop_text
+com.niuteam.securememo.R$string: int notif_text
+com.niuteam.securememo.R$string: int notif_title
+com.niuteam.securememo.R$string: int nsd_servername_postfix
+com.niuteam.securememo.R$string: int ok
+com.niuteam.securememo.R$string: int password_default
+com.niuteam.securememo.R$string: int password_label
+com.niuteam.securememo.R$string: int password_validation_error
+com.niuteam.securememo.R$string: int port_validation_error
+com.niuteam.securememo.R$string: int portnumber_default
+com.niuteam.securememo.R$string: int portnumber_label
+com.niuteam.securememo.R$string: int pst_connected
+com.niuteam.securememo.R$string: int pst_connecting
+com.niuteam.securememo.R$string: int pst_disconnected
+com.niuteam.securememo.R$string: int pst_failed
+com.niuteam.securememo.R$string: int pst_unreachable
+com.niuteam.securememo.R$string: int running_label
+com.niuteam.securememo.R$string: int running_summary_failed
+com.niuteam.securememo.R$string: int running_summary_started
+com.niuteam.securememo.R$string: int running_summary_stopped
+com.niuteam.securememo.R$string: int settings_label
+com.niuteam.securememo.R$string: int show_password_default
+com.niuteam.securememo.R$string: int show_password_label
+com.niuteam.securememo.R$string: int storage_warning
+com.niuteam.securememo.R$string: int swiftp_name
+com.niuteam.securememo.R$string: int unknown
+com.niuteam.securememo.R$string: int user_label
+com.niuteam.securememo.R$string: int username_default
+com.niuteam.securememo.R$string: int username_label
+com.niuteam.securememo.R$string: int username_validation_error
+com.niuteam.securememo.R$string: int wakelock_default
+com.niuteam.securememo.R$string: int wakelock_label
+com.niuteam.securememo.R$string: int widget_name
+com.niuteam.securememo.R$string: int wifi_state_receiver_label
+com.niuteam.securememo.R$xml: int preferences
+com.niuteam.securememo.R$xml: int widget_info
