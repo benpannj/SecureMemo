@@ -1,5 +1,6 @@
 package com.niuteam.database;
 
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
 import android.util.Log;
@@ -9,6 +10,8 @@ import com.niuteam.CONST;
 import com.niuteam.MainApp;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by ben on 5/15/15.
@@ -55,5 +58,34 @@ public class MainDb {
             db = null;
         }
     }
+    public static List<String> query(String sql){
+        SQLiteDatabase db = getInst().open();
+        List<String> items= new ArrayList<String>();
+        try {
+            Cursor cur = db.rawQuery(sql, null);
+            if ( cur.moveToFirst() ){
+                do {
+                    String s = cur.getString(0);
+                    items.add(s);
+                }while (cur.moveToNext());
+            }
+            cur.close();
+            cur = null;
+        }catch (Exception e){
+            Log.i(CONST.TAG, "get last time error ", e);
+        }
+        return items;
+    }
+    public static int exec(String sql, Object[] objs){
+        SQLiteDatabase db = getInst().open();
+        int i = 0;
+        try {
+            db.execSQL(sql, objs);
+        }catch (Exception e){
+            Log.i(CONST.TAG, "get last time error ", e);
+            i = -1;
+        }
+        return i;
 
+    }
 }

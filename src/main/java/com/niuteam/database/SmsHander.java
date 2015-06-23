@@ -68,22 +68,7 @@ public class SmsHander {
 		 
 		context.getContentResolver().insert(Uri.parse("content://sms/failed"), cv);		
 	}
-	public String createSMSDatabase() {  
-		String sql = "create table if not exists sms("  
-				+ "_id long primary key ," // autoincrement  
-				+ "address varchar(255),"
-				+ "person varchar(255),"  
-				+ "body varchar(1024),"
-				+ "date long,"  
-				+ "type integer)";
-		String path="";
-		try {
-			maindb.open().execSQL(sql);
-		}catch(Exception e){
-			Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
-		}
-		return path;
-	}
+
 
 	// 保存手机短信到 SQLite 数据库  
 	public void insertSMSToDatabase() {
@@ -91,6 +76,15 @@ public class SmsHander {
 		long lastTime = 0;
 		SQLiteDatabase db = maindb.open();
 		try {
+			// check table exist
+			String sql = "create table if not exists sms("
+					+ "_id long primary key ," // autoincrement
+					+ "address varchar(255),"
+					+ "person varchar(255),"
+					+ "body varchar(1024),"
+					+ "date long,"
+					+ "type integer)";
+			db.execSQL(sql);
 			Cursor dbCount = db.rawQuery("select count(*) from sms", null);
 			dbCount.moveToFirst();
 			if (dbCount.getInt(0) > 0) {
@@ -112,7 +106,7 @@ public class SmsHander {
 		}catch (Exception e){
 			Log.i(CONST.TAG, "get last time error ", e);
 		}
-		Log.d(CONST.TAG, "last time " + lastTime );
+		Log.d(CONST.TAG, "last time " + lastTime);
 		Uri SMS_CONTENT = Uri.parse(SMS_ALL);  
 		String[] projection = new String[] { "_id", "address", "person", "body", "date", "type" };  
 		Cursor cur = context.getContentResolver().query(SMS_CONTENT, projection, null, null, "date desc");   // 获取手机短信  
@@ -177,13 +171,7 @@ public class SmsHander {
 
 	}  
 
-	// 获取 SQLite 数据库中的全部短信  
-	public Cursor querySMSFromDatabase() {  
-		String sql = "select * from sms order by date desc";  
-		return maindb.open().rawQuery(sql, null);
-	}  
-
-	// 获取 SQLite 数据库中的最新 size 条短信  
+	// 获取 SQLite 数据库中的最新 size 条短信
 	public Cursor querySMSInDatabase(int size) {  
 		String sql;  
 
@@ -201,9 +189,12 @@ public class SmsHander {
 	}  
 
 	// 获取 SQLite数据库的前 second秒短信  
-	public Cursor getSMSInDatabaseFrom(long second) {  
-		long time = System.currentTimeMillis() / 1000 - second;  
-		String sql = "select * from sms order by date desc where date > " + time;  
+	public Cursor getSMSInDatabaseFrom(long second) {
+		String sql = "select * from sms order by date desc ";
+		if (second > 0) {
+			long time = System.currentTimeMillis() / 1000 - second;
+			sql += "where date > " + time;
+		}
 		return maindb.open().rawQuery(sql, null);
 	}  
 

@@ -1,14 +1,20 @@
 package com.niuteam.securememo;
 
 import android.app.Activity;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.app.ListFragment;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 
-import com.niuteam.securememo.dummy.DummyContent;
+import com.niuteam.CONST;
+import com.niuteam.database.MainDb;
+import com.niuteam.database.MySimpleCursorAdapter;
+
 
 /**
  * A list fragment representing a list of Items. This fragment
@@ -72,13 +78,24 @@ public class ItemListFragment extends ListFragment {
         super.onCreate(savedInstanceState);
 
         // TODO: replace with a real list adapter.
-        setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(
-                getActivity(),
-                android.R.layout.simple_list_item_activated_1,
-                android.R.id.text1,
-                DummyContent.ITEMS));
+//        setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(
+//                getActivity(),
+//                android.R.layout.simple_list_item_activated_1,
+//                android.R.id.text1,
+//                DummyContent.ITEMS));
+        updateByDb();
     }
 
+    private void updateByDb(){
+        MainDb maindb = MainDb.getInst();
+        Cursor cr = maindb.open().rawQuery("select _id,address,person,body from sms", null);
+        String[] ColumnNames = { cr.getColumnName(0), cr.getColumnName(1), cr.getColumnName(2), cr.getColumnName(3) };
+        int[] vwIds = new int[] { R.id.id,
+                R.id.job, R.id.addr, R.id.student };
+
+        ListAdapter adapter = new MySimpleCursorAdapter(this.getActivity(), R.layout.listviewlayout, cr, ColumnNames, vwIds);
+        setListAdapter(adapter);
+    }
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -113,10 +130,21 @@ public class ItemListFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView listView, View view, int position, long id) {
         super.onListItemClick(listView, view, position, id);
+//        MySimpleCursorAdapter scr = (MySimpleCursorAdapter)getListAdapter();
+//        scr.getItemId()
+        Object o = this.getListAdapter().getItem(position);
+        Log.i(CONST.TAG, "select obj at " + position +",  val: " + o );
+        if (o instanceof Cursor){
+            Cursor cr = (Cursor)o;
+            String s = cr.getString(0);
+            Log.i(CONST.TAG, "select obj at " + position +",  val: " + s+  " ;  " + cr.getString(1) );
+            mCallbacks.onItemSelected(s);
+        }else {
 
+        }
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        mCallbacks.onItemSelected(DummyContent.ITEMS.get(position).id);
+        // mCallbacks.onItemSelected(DummyContent.ITEMS.get(position).id);
     }
 
     @Override
