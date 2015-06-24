@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.niuteam.database.SmsItem;
+
 
 /**
  * A fragment representing a single Item detail screen.
@@ -25,7 +27,7 @@ public class ItemDetailFragment extends Fragment {
      * The dummy content this fragment is presenting.
      */
 //    private DummyContent.DummyItem mItem;
-    private String id;
+    private SmsItem id;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -42,7 +44,10 @@ public class ItemDetailFragment extends Fragment {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
-            id= getArguments().getString(ARG_ITEM_ID);
+            Object o = getArguments().get(ARG_ITEM_ID);
+            if (o instanceof  SmsItem){
+                id = (SmsItem)o;
+            }
 //            mItem = DummyContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
         }
     }
@@ -54,7 +59,7 @@ public class ItemDetailFragment extends Fragment {
 
         // Show the dummy content as text in a TextView.
         if (id != null) {
-            ((TextView) rootView.findViewById(R.id.item_detail)).setText(id);
+            ((TextView) rootView.findViewById(R.id.item_detail)).setText(id.datetime +"\n" + id.person + "\n" + id.text);
         }
 
         return rootView;

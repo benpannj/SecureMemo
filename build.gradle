@@ -16,7 +16,7 @@ android {
 
     defaultConfig {
         applicationId "com.niuteam.securememo"
-        minSdkVersion 10
+        minSdkVersion 15
         targetSdkVersion 22
     }
 
@@ -40,7 +40,7 @@ android {
     }
 }
 dependencies {
-     compile 'com.android.support:support-v4:22.+'
+     // compile 'com.android.support:support-v4:22.+'
 }
 
 

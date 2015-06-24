@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<item android:id="@+id/btn_about" android:title="About" />
+    <item android:id="@+id/btn_filter"
+        android:icon="@android:drawable/ic_menu_search"
+        android:showAsAction="ifRoom|collapseActionView"
+        android:title="Filter"
+        android:actionViewClass="android.widget.SearchView" />
+    <item android:id="@+id/btn_ftp" android:title="FTP"  android:showAsAction="always" />
+    <item android:id="@+id/btn_sms" android:title="Bak SMS" />
+    <item android:id="@+id/btn_keepx" android:title="Keepass" />
+    <item android:id="@+id/btn_about" android:title="About" />
 </menu>

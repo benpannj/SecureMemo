@@ -14,6 +14,7 @@ import android.widget.ListView;
 import com.niuteam.CONST;
 import com.niuteam.database.MainDb;
 import com.niuteam.database.MySimpleCursorAdapter;
+import com.niuteam.database.SmsItem;
 
 
 /**
@@ -53,7 +54,7 @@ public class ItemListFragment extends ListFragment {
         /**
          * Callback for when an item has been selected.
          */
-        public void onItemSelected(String id);
+        public void onItemSelected(SmsItem item);
     }
 
     /**
@@ -62,7 +63,7 @@ public class ItemListFragment extends ListFragment {
      */
     private static Callbacks sDummyCallbacks = new Callbacks() {
         @Override
-        public void onItemSelected(String id) {
+        public void onItemSelected(SmsItem id) {
         }
     };
 
@@ -88,12 +89,16 @@ public class ItemListFragment extends ListFragment {
 
     private void updateByDb(){
         MainDb maindb = MainDb.getInst();
-        Cursor cr = maindb.open().rawQuery("select _id,address,person,body from sms", null);
-        String[] ColumnNames = { cr.getColumnName(0), cr.getColumnName(1), cr.getColumnName(2), cr.getColumnName(3) };
-        int[] vwIds = new int[] { R.id.id,
-                R.id.job, R.id.addr, R.id.student };
+        // // LIMIT X OFFSET X*Y 是对数据库分页的重要语句，X=5是每次显示的数目条数，Y是表示第几页
+        Cursor cr = maindb.open().rawQuery("select _id,address,person,body from sms order by _id desc", null);
 
+        String[] ColumnNames = { cr.getColumnName(0), cr.getColumnName(1), cr.getColumnName(2), cr.getColumnName(3) };
+        int[] vwIds = new int[] { R.id.id, R.id.job, R.id.addr, R.id.student };
         ListAdapter adapter = new MySimpleCursorAdapter(this.getActivity(), R.layout.listviewlayout, cr, ColumnNames, vwIds);
+
+//        String[] ColumnNames = { cr.getColumnName(2), cr.getColumnName(1), cr.getColumnName(3) };
+//        int[] vwIds = new int[] { R.id.sms_datetime, R.id.sms_person, R.id.sms_txt };
+//        ListAdapter adapter = new MySimpleCursorAdapter(this.getActivity(), R.layout.sms_item, cr, ColumnNames, vwIds);
         setListAdapter(adapter);
     }
     @Override
@@ -136,9 +141,10 @@ public class ItemListFragment extends ListFragment {
         Log.i(CONST.TAG, "select obj at " + position +",  val: " + o );
         if (o instanceof Cursor){
             Cursor cr = (Cursor)o;
-            String s = cr.getString(0);
-            Log.i(CONST.TAG, "select obj at " + position +",  val: " + s+  " ;  " + cr.getString(1) );
-            mCallbacks.onItemSelected(s);
+            SmsItem item = SmsItem.cur2item(cr);
+//            String s = cr.getString(0);
+            Log.i(CONST.TAG, "select obj at " + position +",  val: " + item.datetime +  " ;  " + cr.getString(1) );
+            mCallbacks.onItemSelected(item);
         }else {
 
         }

@@ -6,6 +6,8 @@ import android.app.Activity;
 // import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 
+import java.io.Serializable;
+
 
 /**
  * An activity representing a single Item detail screen. This
@@ -39,8 +41,8 @@ public class ItemDetailActivity extends Activity {
             // Create the detail fragment and add it to the activity
             // using a fragment transaction.
             Bundle arguments = new Bundle();
-            arguments.putString(ItemDetailFragment.ARG_ITEM_ID,
-                    getIntent().getStringExtra(ItemDetailFragment.ARG_ITEM_ID));
+            Serializable item = getIntent().getSerializableExtra(ItemDetailFragment.ARG_ITEM_ID );
+            arguments.putSerializable(ItemDetailFragment.ARG_ITEM_ID,item);
             ItemDetailFragment fragment = new ItemDetailFragment();
             fragment.setArguments(arguments);
             getFragmentManager().beginTransaction()

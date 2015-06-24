@@ -18,6 +18,7 @@ public class TodoHandler {
     public TodoHandler() {
 //        this.context = context;
         maindb = MainDb.getInst();
+        create();
     }
     private void create() {
         String sql = "create table if not exists todo("

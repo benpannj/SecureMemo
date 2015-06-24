@@ -3,10 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.niuteam.securememo.MainActivity" >
 
     <TextView
@@ -15,31 +11,21 @@
         android:text="@string/hello_world"
         android:id="@+id/txt_show" />
     <EditText
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world"
         android:id="@+id/txt_input"
         android:inputType="text"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BackupSms"
-        android:id="@+id/btn_sms"
+        android:text="Todo"
+        android:id="@+id/btn_todo"
         android:layout_gravity="center"
-        android:onClick="backupSms"/>
-   <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="StartFTP"
-        android:id="@+id/btn_ftp"
-        android:layout_gravity="center"
-        android:onClick="startFtp"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="KeepassX"
-        android:id="@+id/btn_pass"
-        android:layout_gravity="center"
-        android:onClick="keepassX"/>
+        android:onClick="todo"/>
+ <ListView
+     android:id="@+id/lv_todos"
+     android:layout_width="match_parent"
+     android:layout_height="fill_parent">
 
+ </ListView>
 </LinearLayout>
