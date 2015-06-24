@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-<item android:id="@+id/btn_about" android:title="About" />
-</menu><!-- From: file:/home/data/ws_java/android/SecureMemo/src/main/res/menu/main.xml -->

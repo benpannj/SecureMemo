@@ -1,6 +1,9 @@
 package com.niuteam.securememo;
 
 import android.app.Activity;
+import android.app.LoaderManager;
+import android.content.CursorLoader;
+import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.app.ListFragment;
@@ -26,7 +29,7 @@ import com.niuteam.database.SmsItem;
  * Activities containing this fragment MUST implement the {@link Callbacks}
  * interface.
  */
-public class ItemListFragment extends ListFragment {
+public class ItemListFragment extends ListFragment implements LoaderManager.LoaderCallbacks<Cursor> {
 
     /**
      * The serialization (saved instance state) Bundle key representing the
@@ -84,7 +87,8 @@ public class ItemListFragment extends ListFragment {
 //                android.R.layout.simple_list_item_activated_1,
 //                android.R.id.text1,
 //                DummyContent.ITEMS));
-        updateByDb();
+        // updateByDb();
+        getLoaderManager().initLoader(1, null, this);
     }
 
     private void updateByDb(){
@@ -100,6 +104,23 @@ public class ItemListFragment extends ListFragment {
 //        int[] vwIds = new int[] { R.id.sms_datetime, R.id.sms_person, R.id.sms_txt };
 //        ListAdapter adapter = new MySimpleCursorAdapter(this.getActivity(), R.layout.sms_item, cr, ColumnNames, vwIds);
         setListAdapter(adapter);
+    }
+    public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+     return new CursorLoader(this.getActivity());
+    }
+    public void onLoaderReset(Loader<Cursor> arg0) {
+
+    }
+    public void onLoadFinished(Loader<Cursor> arg0, Cursor cursor) {
+        String[] ColumnNames = { cursor.getColumnName(0), cursor.getColumnName(1), cursor.getColumnName(2), cursor.getColumnName(3) };
+        int[] vwIds = new int[] { R.id.id, R.id.job, R.id.addr, R.id.student };
+        ListAdapter adapter = new MySimpleCursorAdapter(this.getActivity(), R.layout.listviewlayout, cursor, ColumnNames, vwIds);
+
+//        String[] ColumnNames = { cr.getColumnName(2), cr.getColumnName(1), cr.getColumnName(3) };
+//        int[] vwIds = new int[] { R.id.sms_datetime, R.id.sms_person, R.id.sms_txt };
+//        ListAdapter adapter = new MySimpleCursorAdapter(this.getActivity(), R.layout.sms_item, cr, ColumnNames, vwIds);
+        setListAdapter(adapter);
+
     }
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
